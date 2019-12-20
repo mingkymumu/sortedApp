@@ -5,3 +5,4 @@
 - ${Project Directory/src/com/noer} java Main.java "D:\SortedApp\unsorted-names-list.txt"
 
 
+![](https://github.com/mingkymumu/sortedApp/blob/master/img/screen%20shoot.png)
