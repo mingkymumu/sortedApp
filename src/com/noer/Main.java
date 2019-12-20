@@ -3,9 +3,14 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
+    /**
+     * @param filePath
+     * @return
+     * @throws FileNotFoundException
+     */
+    //this method for read from file and convert text to person List
     public static List<Person> getListFromFile(String filePath) throws FileNotFoundException {
         List<Person> list = new ArrayList<>();
-//        File myObj = new File("/sortedApp/unsorted-names-list.txt");
         File myObj = new File(filePath);
         Scanner myReader = new Scanner(myObj);
         while (myReader.hasNextLine()) {
@@ -18,7 +23,7 @@ public class Main {
     }
 
     //this method for sorting a list collection
-    public static List<Person> sortPerson(ArrayList list){
+    public static List<Person> sortPerson(List list){
         //first sort criteria is last name then the full name
         Collections.sort(list,Comparator.comparing(Person::getLastName).thenComparing(Person::getFullName));
         return  list;
@@ -41,7 +46,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
             List<Person> list = getListFromFile(args[0]);
-            sortPerson((ArrayList) list);
+            sortPerson( list);
             list.forEach(person->{
                 System.out.println(person.getFullName());
             });
